@@ -67,6 +67,7 @@ body {
 	grid-area: 3 / 2 / 4 / 3;
 	font-size: 21px;
 	display: flex;
+	flex-wrap: nowrap;
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: flex-start;

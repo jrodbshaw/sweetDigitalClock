@@ -39,19 +39,18 @@ function setDate() {
 	}
 	// setting the hours
 	if (hours > 12) {
-		document.querySelector(".hour").innerHTML = `${hours - 12}`;
+		document.querySelector(".hour").innerHTML = `0${hours - 12}`;
 		document.querySelector("body").style.backgroundColor = "black";
 		document.querySelector("body").style.color = "white";
 		document.querySelector(".clock-face").style.border = "solid 1px white";
 		document.querySelector(".clock-face").style.backgroundColor = "black";
-	}
-	if (hours < 10) {
+	} else if (hours < 10) {
 		document.querySelector("body").style.backgroundColor = "skyblue";
 		document.querySelector(".hour").innerHTML = `0 ${hours}`;
 	} else {
 		document.querySelector(".hour").innerHTML = `${hours}`;
 	}
-	if (hours <= 12) {
+	if (hours < 12) {
 		document.querySelector("body").style.backgroundColor = "skyblue";
 	}
 }
@@ -70,8 +69,8 @@ promise
 	})
 	.then(function(processedResponse) {
 		const temp = `current temp ${processedResponse.main.temp}°`,
-			humidity = `humidity ${processedResponse.main.humidity}％`,
-			tempMinMax = `˰${processedResponse.main.temp_min} ˯${processedResponse.main.temp_max}`;
+			humidity = `humidity ${processedResponse.main.humidity} %`,
+			tempMinMax = `˰${processedResponse.main.temp_max} ˯${processedResponse.main.temp_min}`;
 		const weatherItems = [temp, humidity, tempMinMax];
 
 		weatherItems.forEach(function(item) {
